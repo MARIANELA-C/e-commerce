@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-const ItemCount=()=>{
-    const[counter, setCounter]=useState(1)
-    const[onadd,setonAdd]=useState()
-    let stock=5;
+const ItemCount=({initial,stock,onAdd})=>{
+    const[counter, setCounter]=useState(initial)
+    const[onadd,setonAdd]=useState(onAdd)
+    //let stock=5;
     
     
 
