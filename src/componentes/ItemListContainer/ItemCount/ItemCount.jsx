@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 const ItemCount=({initial,stock,onAdd})=>{
     const[counter, setCounter]=useState(initial)
-    const[onadd,setonAdd]=useState(onAdd)
-    //let stock=5;
-    
-    
-
-    useEffect(()=>{
-       setCounter(counter);
-   },[counter])
-   
 
     return(
         <div>
@@ -19,8 +10,7 @@ const ItemCount=({initial,stock,onAdd})=>{
             <button disabled={counter<=0} onClick={()=>setCounter(counter-1)}>Restar</button>
 
             <div>
-                <div>{onadd}</div>                
-                <button disabled={stock<=0}onClick={()=>setonAdd(counter)}>Agregar al carrito</button>
+                <button disabled={stock<=0}onClick={()=>onAdd(counter)}>Agregar al carrito</button>
             </div>
         </div>
     )
